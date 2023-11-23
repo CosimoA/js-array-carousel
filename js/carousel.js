@@ -9,6 +9,12 @@ let activeImg = 0;
 const next = document.querySelector(".next");
 const prev = document.querySelector(".prev");
 
+// creo condizioni per nascondere pulsante prev all'inizio
+
+if (activeImg <= 0) {
+    prev.classList.add("hidden");
+};
+
 // creo evento al click per pulsante next
 
 next.addEventListener("click", function(){
@@ -25,6 +31,10 @@ next.addEventListener("click", function(){
         if (activeImg === items.length -1) {
             next.classList.add("hidden");
         }
+
+        if (activeImg > 0) {
+            prev.classList.remove("hidden");
+        };
     }
 });
 
@@ -41,8 +51,15 @@ prev.addEventListener("click", function(){
         items[activeImg].classList.add("active");
         // se gli item array sono finiti nascondere pulsante next
         if (activeImg === 0) {
-            // prev.classList.add("hidden");
+            prev.classList.add("hidden");
         }
+
+        if (activeImg < items.length -1) {
+            next.classList.remove("hidden");
+        };
+
     }
 });
+
+
 

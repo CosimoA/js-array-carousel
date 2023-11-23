@@ -47,6 +47,7 @@ prev.addEventListener("click", function(){
         items[activeImg].classList.remove("active");
         // incrementiamo l'indice di selezione dell'item
         activeImg--;
+        console.log(activeImg);
         // assegno la classe item all'elemento corrispondente all'indice
         items[activeImg].classList.add("active");
         // se gli item array sono finiti nascondere pulsante next
@@ -57,7 +58,6 @@ prev.addEventListener("click", function(){
         if (activeImg < items.length -1) {
             next.classList.remove("hidden");
         };
-
     }
 });
 

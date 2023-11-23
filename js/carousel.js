@@ -12,11 +12,13 @@ const prev = document.querySelector(".prev");
 // creo evento al click per pulsante next
 
 next.addEventListener("click", function(){
+
     if (activeImg < items.length -1) {
         // se click pulsante next togli la classe active dall'item
         items[activeImg].classList.remove("active");
         // incrementiamo l'indice di selezione dell'item
         activeImg++;
+        console.log(activeImg);
         // assegno la classe item all'elemento corrispondente all'indice
         items[activeImg].classList.add("active");
         // se gli item array sono finiti nascondere pulsante next
@@ -27,4 +29,20 @@ next.addEventListener("click", function(){
 });
 
 // ripeto il processo al contrario per pulsante prev
+
+prev.addEventListener("click", function(){
+
+    if (activeImg <= items.length -1) {
+        // se click pulsante next togli la classe active dall'item
+        items[activeImg].classList.remove("active");
+        // incrementiamo l'indice di selezione dell'item
+        activeImg--;
+        // assegno la classe item all'elemento corrispondente all'indice
+        items[activeImg].classList.add("active");
+        // se gli item array sono finiti nascondere pulsante next
+        if (activeImg === 0) {
+            // prev.classList.add("hidden");
+        }
+    }
+});
 

@@ -9,12 +9,6 @@ let activeImg = 0;
 const next = document.querySelector(".next");
 const prev = document.querySelector(".prev");
 
-// creo condizioni per nascondere pulsante prev all'inizio
-
-if (activeImg <= 0) {
-    prev.classList.add("hidden");
-};
-
 // creo evento al click per pulsante next
 
 next.addEventListener("click", function(){
